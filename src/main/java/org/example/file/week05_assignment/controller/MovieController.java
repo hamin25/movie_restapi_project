@@ -51,4 +51,9 @@ public class MovieController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/search")
+    public List<MovieResponse> findByScore(@RequestParam Long score){
+        return movieService.findByScore(score);
+    }
+
 }

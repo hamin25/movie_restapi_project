@@ -41,6 +41,10 @@ public class MovieService {
         repository.deleteById(id);
     }
 
+    public List<MovieResponse> findByScore(Long score){
+        return repository.findByScore(score).stream().map(this::toResponse).toList();
+    }
+
 
 
     private Movie findMovie(Long id){

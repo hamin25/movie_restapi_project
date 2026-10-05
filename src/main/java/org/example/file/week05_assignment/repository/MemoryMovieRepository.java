@@ -37,4 +37,17 @@ public class MemoryMovieRepository implements MovieRepository {
     public void deleteById(Long id) {
         store.remove(id);
     }
+
+    @Override
+    public List<Movie> findByScore(Long score) {
+        List<Movie> result = new ArrayList<>();
+        for(Movie movies : store.values()){
+            if(movies.getScore()>=score) {
+                result.add(movies);
+            }
+        }
+        return result;
+    }
+
+
 }

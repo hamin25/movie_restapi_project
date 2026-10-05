@@ -10,4 +10,5 @@ public interface MovieRepository {
     Optional<Movie> findById(Long id);
     Movie update(Movie movie);
     void deleteById(Long id);
+    List<Movie> findByScore(Long score);
 }
