@@ -4,6 +4,8 @@ import org.example.file.week05_assignment.dto.*;
 import org.example.file.week05_assignment.service.MovieService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.*;
 
 @RestController
@@ -15,8 +17,15 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+    private void validate(MovieRequest r){
+        if(r.title()=="") throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"제목은 필수 입력");
+        if(r.director()=="") throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"감독은 필수 입력");
+        if(r.score()<1 || r.score()>5) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"평점은 1~5점 사이");
+    }
+
     @PostMapping
     public ResponseEntity<MovieResponse> create(@RequestBody MovieRequest request){
+        validate(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(movieService.create(request));
     }
 
@@ -32,6 +41,7 @@ public class MovieController {
 
     @PutMapping("/{id}")
     public MovieResponse update(@PathVariable Long id, @RequestBody MovieRequest request){
+        validate(request);
         return movieService.update(id, request);
     }
 
