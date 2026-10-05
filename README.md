@@ -7,3 +7,80 @@
 * 존재하지 않는 ID에 대해 404가 반환되는 과정 : service에서는 service에서만 사용하기 위해 private으로 선언된 메서드 findBook과 toResponse가 있다. repository에서 id 에 일치하는 book 객체를 가져오는데, 만약 해당 id에 대한 객체 값이 없다면 빈 optional이 되므로 예외를 발생시켜 controller에서 404 Not Found 응답으로 바꿔 출력한다.
 
 * Domain 객체를 Response DTO로 변환하는 과정 : toResponse 메서드에서 객체에 대해 getter로 값을 하나씩 다 꺼낸다음 생성자를 호출 후 반환한다.
+
+
+README.md 작성
+① 프로젝트 소개
+주제와 관리하는 데이터 : Movie data management
+프로젝트 구조 : 
+로컬 실행 방법
+API Endpoint 표
+요청·응답 JSON 예시
+GitHub Repository URL과 배포 URL
+
+
+② 개발환경 및 Dependency
+
+항목
+
+작성 내용
+
+IDE
+
+사용한 IntelliJ IDEA
+
+JDK
+
+실제 사용한 버전
+
+Spring Boot
+
+프로젝트에서 사용한 버전
+
+Build Tool
+
+Gradle 및 사용한 버전
+
+데이터 저장
+
+사용한 Java Collection
+
+배포 환경
+
+수업에서 사용한 배포 방식(배포 URL)
+
+사용한 Dependency의 이름과 프로젝트에서 필요한 이유도 작성합니다. build.gradle 전체를 복사하는 대신 직접 선택하거나 추가한 Dependency를 설명합니다.
+
+③ Solution 분석
+
+STEP 1의 학습 항목 중 질문과 답변 5개 이상을 작성합니다. 각 답변에 관련 클래스·메서드 이름을 적습니다.
+
+④ 개발 과정 요약
+
+프로젝트를 만든 과정을 5단계 내외로 순서대로 정리합니다. 각 단계에서 다음 내용을 간단히 설명합니다.
+
+무엇을 만들거나 변경했는가?
+어느 클래스·메서드를 작성했는가?
+실행 또는 테스트로 어떻게 확인했는가?
+⑤ 기능 수정·확장
+
+STEP 5의 A와 B에 대해 다음 내용을 작성합니다.
+
+기능을 추가한 이유
+수정한 클래스와 메서드
+테스트에 사용한 요청과 예상 결과
+실제 응답 결과
+⑥ 배포 과정 요약
+
+자신이 수행한 빌드 및 배포 순서
+배포를 위해 추가하거나 수정한 파일·설정
+배포 중 발생한 문제와 해결 방법
+배포 URL로 확인한 요청과 응답
+⑦ Weekly Report
+
+Key Learning: 직접 구현하며 이해한 내용 3가지
+Problem & Solution: 개발 또는 배포 중 겪은 문제 1개와 해결 과정
+Code Review: 자신이 작성한 중요한 메서드 1개와 동작 설명
+AI Usage: AI에 질문한 내용, 참고한 답변, 직접 확인·수정한 부분
+Reflection: 더 공부하고 싶은 내용 또는 궁금한 점
+건의사항
